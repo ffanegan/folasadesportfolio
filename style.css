@@ -1,0 +1,557 @@
+:root {
+    --display_dark: none;
+    --color: antiquewhite;
+    --color_pro: antiquewhite;
+    --active_click: rgb(207, 180, 143);
+    --background-color-job: rgb(80, 73, 113);
+    --background-color-footer: rgb(44, 20, 68);
+    --background-image: linear-gradient(rgb(38, 38, 61),rgb(56, 47, 77));
+    --background_tool_bar: rgb(38, 38, 61);
+    --opacity_darkmode: 1;
+}
+
+.lightmode {
+    --color: rgb(54, 8, 44);
+    --active_click: rgb(99, 37, 85);
+    --background-color-job: rgb(235, 201, 238);
+    --background-color-footer: rgb(219, 179, 223);
+    --background-image: linear-gradient(rgb(253, 253, 253),rgb(252, 219, 255));
+    --background_tool_bar: rgb(253, 253, 253);
+    --display_light: flex;
+    --color_pro: antiquewhite;
+    --opacity_lightmode: 0;
+}
+
+body {
+    margin: 0px;
+    background-attachment: fixed;
+    font-family: "DM Sans", sans-serif;
+    color: var(--color);
+    background-image: var(--background-image);
+}
+
+a {
+    text-decoration: none;
+}
+
+.header{
+    justify-items: left;
+    color: var(--color);
+    align-items: center;
+    padding-left: 25px;
+    padding-bottom: 10px;
+}
+.tool-bar {
+    display: flex;
+    background-color: var(--background_tool_bar) ;
+    flex-flow: row nowrap;
+    justify-content: right;
+    align-items: center;
+    align-content: center;
+    z-index: 4;
+    justify-content: space-between;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.tool-bar button{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    align-content: center;
+    background: transparent;
+    border: none;
+    position: relative;
+}
+#right_buttons  {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: right;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    margin: 15px;
+    z-index: 5;
+}
+#moon {
+    display: none;
+    position: sticky;
+}
+#port_div{
+    display: flex;
+    justify-content: right;
+    justify-content: right;
+}
+#port{
+    width: 150px;
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: 5px;
+    margin-left: 15px;
+}
+
+.lightmode #moon {
+    display: flex;
+    position: relative;
+}
+.lightmode #sun {
+    display: var(--display_light);
+    display: flex;
+    filter: sepia(100%);
+    left: 70px;
+    opacity: 0;
+    position: fixed;
+}
+
+.light_tooltip{
+    position: absolute;
+    background-color: rgb(91, 91, 91);
+    padding: 4px;
+    font-family: "DM Sans";
+    color: white;
+    width: 60px;
+    border-radius: 5px;
+    font-size: 10px;
+    bottom: -25px;
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+}
+
+
+.dark_tooltip {
+    position: absolute;
+    background-color: rgb(91, 91, 91);
+    padding: 4px;
+    font-family: "DM Sans";
+    color: white;
+    width: 60px;
+    border-radius: 5px;
+    font-size: 10px;
+    bottom: -35px;
+    left: -12px;
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+}
+
+/*Tooltip Toggle*/
+.tool-bar button:hover .light_tooltip{
+    opacity: 1; /*1*/
+}
+.tool-bar button:hover .dark_tooltip{
+    opacity: 0; /*0*/
+}
+.lightmode .tool-bar button:hover .light_tooltip { 
+    /*When you over the button, the element does this:*/
+    opacity: 0; /*0*/
+}
+.lightmode .tool-bar button:hover .dark_tooltip{
+    opacity: 1; /*1*/
+}
+
+.tool-bar img{
+    width: 20px;
+    fill: rgb(161, 65, 183);
+    padding-right: 5px;
+    padding-bottom: 3px;
+    /* background-color: none; */
+}
+
+.tool-bar img:hover{
+    cursor: pointer;
+}
+
+.tool-bar li {
+    color: var(--color);
+    transition: opacity 0s;
+    list-style-type: none;
+    font-size: 18px;
+    
+}
+
+.link {
+    margin: 5px;
+    padding: 10px;
+    color: var(--color);
+    transition: opacity 0s;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 18px;
+}
+.link:hover, #ghbtn:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+li:active {
+    text-decoration: underline;
+    color: var(--active_click);
+}
+
+.home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    margin-left: 70px;
+    margin-right: 30px;
+}
+.home h1{
+    font-size: 3.0em;
+    font-family: "DM Sans", sans-serif;
+    padding-left: 25px;
+    margin-top: 70px;
+    padding-right: 25px;
+}
+.home p{
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.8em;
+    padding-left: 25px;
+    padding-right: 25px;
+    
+}
+#boo{ 
+    display: inline-block;
+    height: auto;
+    width: 350px;
+    max-width: 100%;
+    margin-top: 50px;
+}
+
+.image {
+    display: flex;
+    margin-left: 150px;
+    flex-flow: column;
+    justify-content: right;
+    justify-items: right;
+    align-items: center;
+    align-content: right;
+}
+.btns{
+    display: flex;
+    width: 140px;
+    display: row;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    align-items: space-evenly;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.topbtn{
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    border: 1px;
+    background-color: rgb(99, 99, 99);
+    padding: 10px;
+    text-decoration: none;
+    position: relative;
+}
+
+.topbtn:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 1.5px, rgb(0 0 255 / 0.5px);
+    background-color: rgb(159, 159, 159);
+    text-decoration: underline;
+}
+
+.topbtn:hover .btns_tooltip{
+    opacity: 1;
+} 
+
+#ghbtn {
+    width: 25px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .home p {
+    font-size: 25px;
+  }
+  .home h1 {
+    font-size: 35px;
+  }
+  .image {
+        margin-left: 0px;
+  }
+  .project{
+        display: flex;
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .home p {
+        font-size: 16px;
+  }
+    .footer_text {
+        font-size: 13px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .job{
+        display: flex;
+        border: solid black;
+        border-radius: 25px;
+        align-items: flex-start;
+        align-content: flex-start;
+        padding: 8px;
+        font-size: 20px;  
+    }
+    .tool-bar {
+        position: fixed;
+        z-index: 10;
+        top:0;
+        right: -100%;
+        border-left: 1px solid;
+    }
+    #port_div {
+        display: none;
+    }
+    #right_buttons {
+        height: 100%;
+        display: flex;
+        width: 100%;;
+        flex-flow: column wrap;
+    }
+}
+
+
+#experience, #projects{
+    margin: 50px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    justify-items: center;
+}
+
+
+#experience_box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+    row-gap: 20px;
+    justify-items: center;
+    padding: 16px;
+}
+
+.job {
+    display: flex;
+    background-color: var(--background-color-job);
+    border-radius: 25px;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 8px;
+    font-size: 20px;
+}
+.logo {
+    display: inline-block;
+}
+.job img{
+    display: inline-block;
+    height: auto;
+    width: 65px;
+    padding: 10px;
+}
+
+.job time {
+    font-size: 10px;
+}
+.desc {
+    font-size: 10px;
+    margin-top: 7px;
+    display: inline-block;
+}
+
+.job-info {
+    display: inline-block;
+    margin: 0%;
+    padding: 10px;
+}
+
+.job-info h3 {
+    font-size: 25px;
+    margin: 0px;
+}
+.job-info li {
+    margin-top: 8px;
+}
+.desc {
+    font-size: 12px;
+}
+
+/* Skill Section */
+#skills  {
+    margin: 50px;
+}
+
+.container_skills{
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: 20px;
+}
+
+.skill {
+    background-color: var(--background-color-job);
+    height: 40px;
+    border-radius: 35px;
+    text-align: center;
+    align-content: center;
+    width: 120px;
+    padding: 6px;
+    margin-right: 9px;
+    margin-bottom: 10px;
+    margin-left: 9px;
+}
+
+.skill img{
+    display: inline;
+    text-align: center;
+    width: 20px;
+    position: relative;
+    bottom: -2px;
+    padding-right: 7px;
+    height: 20px;
+}
+
+
+/* Project Section */
+.container_projects{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#data_analysis_header {
+    display: inline-block;
+}
+.project {
+    display: flex;
+    font-size: 20px;
+    height: 140px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-decoration: none;
+    transition: text-decoration 3.0s;
+}
+
+.project:hover {
+    text-decoration: underline;
+    filter: brightness(80%);
+    color: var(--color_pro);
+}
+
+#tip_box, #color, #stopwatch, #count, #python_proj {
+    position: relative;
+}
+
+
+#tip_box::before, #count::before{
+    background-image: url("tip.png");
+    background-position: top; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container*/
+    opacity: 0.9;
+    position: absolute;
+    content: "  ";
+    width: 670px; 
+    height: auto;
+    max-width: 100%;
+    height: 140px;
+}
+
+#python_proj::before {
+    background-image: url("tip.png");
+    background-position: top; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container*/
+    opacity: 0.9;
+    position: absolute;
+    content: "  ";
+    width: 670px; 
+    height: auto;
+    max-width: 100%;
+    height: 140px;
+}
+#count::before{
+    background-image: url("adam.png");
+    background-position: top; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container*/
+    opacity: 0.9;
+    position: absolute;
+    content: "  ";
+    width: 670px; 
+    height: auto;
+    max-width: 100%;
+    height: 140px;
+}
+
+#stopwatch::before{
+    background-image: url("stopwatch.png");
+    background-position: top; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container*/
+    opacity: 0.9;
+    position: absolute;
+    content: "  ";
+    width: 670px; 
+    height: auto;
+    max-width: 100%;
+    height: 140px;
+}
+
+#color::before{
+    background-image: url("color.png");
+    background-position: top; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container*/
+    opacity: 0.9;
+    position: absolute;
+    content: "  ";
+    width: 670px; 
+    height: auto;
+    max-width: 100%;
+    height: 140px;
+}
+
+#tip_box h2, #count h2, #stopwatch h2, #color h2, #python_proj h2{
+    color: var(--color_pro);
+    opacity: 1;
+    padding: 16px;
+    position: relative;
+}
+
+/*Footer Section */
+
+#footer {
+    display: flex;
+    background-color: var(--background-color-footer);
+    align-items: center;
+    color: var(--color);
+    height: 200px;
+    margin: none;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.footer_text{
+    text-align: center;
+    text-decoration: none;
+    padding: 70px;
+    font-size: 20px;
+    font-family: "DM Sans";
+    color: var(--color);
+    text-decoration: none;
+    font-weight: 2px;
+}
+
+.footer_text:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
