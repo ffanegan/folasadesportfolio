@@ -11,29 +11,44 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Pangolin&display=swap" rel="stylesheet">
 </head>
 <body class="">
+    <div id="icon_ham_toolbar">
+        <div id="port_ham_toolbar">
+            <li><img id="port_ham" src="header.png" alt="header"></li>
+        </div>
+        <div id="icons">
+            <img onclick=openSidebar() id="icon_ham" src="menu.png" alt="hamburger icon">
+            <img onclick=closeSidebar() id="icon_close" src="close.png" alt="close icon">
+        </div>
+
+    </div>
     <div class="tool-bar">
         <div id="port_div">
             <li><img id="port" src="header.png" alt="header"></li>
         </div>
+
         <div id="right_buttons">
-        <button id="theme" onclick="light_bgd()">
-                <img id="sun" src="sun.png" alt="sun.png">
-                <img id="moon" src="moon.png" alt="moon.png">
-            <div class="light_tooltip">
-                Light Mode
-            </div>
-            <div class="dark_tooltip">
-                Dark Mode
-            </div>
-        </button>
-        <li><a class="link" href="#skills">Skills</a></li>
-        <li><a class="link" href="#projects">Projects</a></li>
-        <li><a class="link" href="#experience">Experience</a></li>
-        <li><a class="link" href="#footer">Contact</a></li></div>
+            <button id="theme" onclick="light_bgd()">
+                    <img id="sun" src="sun.png" alt="sun.png">
+                    <img id="moon" src="moon.png" alt="moon.png">
+                <div class="light_tooltip">
+                    Light Mode
+                </div>
+                <div class="dark_tooltip">
+                    Dark Mode
+                </div>
+            </button>
+            <li><a class="link" href="#skills">Skills</a></li>
+            <li><a class="link" href="#projects">Projects</a></li>
+            <li><a class="link" href="#experience">Experience</a></li>
+            <li><a class="link" href="mailto:ffanegan12@gmail.com">Contact</a></li>
+        </div>
+
     </div>
 
+    
+
     <div class="home">
-        <div>
+        <div class="animationFadeIn">
             <h1>Hi, I'm an aspiring web programmer!</h1>
             <p class="intro"> I specialize in front-end development. Always looking for creative ways to help clients and communities through the epicenter of psychology, research, and data science.</p>
         </div>
@@ -96,7 +111,7 @@
             <div>
             </div>
                <div class="project" id="python_proj">
-                <a target="_blank" href="https://github.com/ffanegan/Frontend-Development/tree/main/Tip">
+                <a target="_blank" href="https://github.com/ffanegan/coding-projects/blob/main/Data_Visualization_Python_Project.ipynb">
                     <h2>Retail Analysis</h2>
                 </a>
             </div>
@@ -199,7 +214,7 @@
                 </a>
             </div>
             <div>
-                <a class="footer_text" href="ffanegan12@gmail.com">Contact Me: 📧  ffanegan12@gmail.com</a>
+                <a class="footer_text" href="mailto:ffanegan12@gmail.com">Contact Me: 📧  ffanegan12@gmail.com</a>
             </div>
     </div>
 </body>

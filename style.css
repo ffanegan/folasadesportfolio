@@ -4,22 +4,27 @@
     --color_pro: antiquewhite;
     --active_click: rgb(207, 180, 143);
     --background-color-job: rgb(80, 73, 113);
+    --background-topbtn:  rgb(99, 99, 99);
     --background-color-footer: rgb(44, 20, 68);
     --background-image: linear-gradient(rgb(38, 38, 61),rgb(56, 47, 77));
     --background_tool_bar: rgb(38, 38, 61);
+    --opacity_projects: 0.7;
     --opacity_darkmode: 1;
+    --filter_tool_icons: brightness(100%);
 }
 
 .lightmode {
     --color: rgb(54, 8, 44);
     --active_click: rgb(99, 37, 85);
     --background-color-job: rgb(235, 201, 238);
+    --background-topbtn:  rgb(151, 151, 151);
     --background-color-footer: rgb(219, 179, 223);
     --background-image: linear-gradient(rgb(253, 253, 253),rgb(252, 219, 255));
     --background_tool_bar: rgb(253, 253, 253);
     --display_light: flex;
     --color_pro: antiquewhite;
     --opacity_lightmode: 0;
+    --filter_tool_icons: brightness(60%);
 }
 
 body {
@@ -45,8 +50,10 @@ a {
     display: flex;
     background-color: var(--background_tool_bar) ;
     flex-flow: row nowrap;
-    justify-content: right;
+    /* justify-content: right; */
     align-items: center;
+    position: sticky;
+    top:0%;
     align-content: center;
     z-index: 4;
     justify-content: space-between;
@@ -65,7 +72,6 @@ a {
 #right_buttons  {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: right;
     align-items: center;
     align-content: center;
     justify-content: space-between;
@@ -78,13 +84,13 @@ a {
 }
 #port_div{
     display: flex;
-    justify-content: right;
-    justify-content: right;
+    justify-content: left;
 }
 #port{
     width: 150px;
     display: flex;
     flex-flow: row wrap;
+    margin-top: 10px;
     margin-right: 5px;
     margin-left: 15px;
 }
@@ -195,6 +201,7 @@ li:active {
     justify-items: center;
     margin-left: 70px;
     margin-right: 30px;
+    
 }
 .home h1{
     font-size: 3.0em;
@@ -202,14 +209,28 @@ li:active {
     padding-left: 25px;
     margin-top: 70px;
     padding-right: 25px;
+    animation: 1.5s fadeInUp;
 }
 .home p{
     font-family: "DM Sans", sans-serif;
     font-size: 1.8em;
     padding-left: 25px;
-    padding-right: 25px;
-    
+    padding-right: 25px;  
+    animation: 1.5s fadeInUp;
+     
 }
+/*home p text animation*/
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
 #boo{ 
     display: inline-block;
     height: auto;
@@ -222,10 +243,13 @@ li:active {
     display: flex;
     margin-left: 150px;
     flex-flow: column;
-    justify-content: right;
+    justify-content: center;
     justify-items: right;
     align-items: center;
-    align-content: right;
+    align-content: center;
+}
+.animationFadeIn {
+    flex: 1 1 100%;
 }
 .btns{
     display: flex;
@@ -245,7 +269,7 @@ li:active {
     flex-direction: row;
     border-radius: 20px;
     border: 1px;
-    background-color: rgb(99, 99, 99);
+    background-color: var(--background-topbtn);
     padding: 10px;
     text-decoration: none;
     position: relative;
@@ -266,6 +290,7 @@ li:active {
     width: 25px;
 }
 
+/*Text size*/
 @media only screen and (max-width: 1000px) {
   .home p {
     font-size: 25px;
@@ -274,11 +299,11 @@ li:active {
     font-size: 35px;
   }
   .image {
-        margin-left: 0px;
+    margin-left: 0px;
   }
   .project{
-        display: flex;
-        font-size: 20px;
+    display: flex;
+    font-size: 20px;
     }
 }
 @media only screen and (max-width: 700px) {
@@ -289,33 +314,101 @@ li:active {
         font-size: 13px;
     }
 }
+#menu_icon  {
+    display: none;
+}
 
-
-@media (max-width: 600px) {
+#icon_ham, #icon_close, #port_ham_toolbar, #icons {
+    display: none;
+}
+/* Menu Toggle */
+@media (max-width: 630px) {
     .job{
         display: flex;
-        border: solid black;
+        /* border: solid black; */
         border-radius: 25px;
         align-items: flex-start;
         align-content: flex-start;
         padding: 8px;
-        font-size: 20px;  
+        font-size: 17px;  
     }
     .tool-bar {
         position: fixed;
         z-index: 10;
-        top:0;
+        top: 9.5%;
         right: -100%;
         border-left: 1px solid;
+        border-right: 1px solid;
+        border-bottom: 1px solid;
     }
-    #port_div {
+
+   #port_ham_toolbar {
+        display: flex;
+        justify-content: left;
+        list-style-type: none;
+    }
+
+    #port_ham {
+        width: 150px;
+        display: flex;
+        flex-flow: row wrap;
+        margin-top: 10px;
+        margin-right: 5px;
+        margin-left: 25px;
+        padding-right: 5px;
+        padding-bottom: 3px;
+    }
+
+    #port{
         display: none;
     }
+
+    #icons {
+        display: flex;
+    }
+
     #right_buttons {
         height: 100%;
         display: flex;
         width: 100%;;
         flex-flow: column wrap;
+    }
+
+    #right_buttons li {
+        margin: 20px;
+    }
+    #icon_ham_toolbar{
+        background-color: var(--background_tool_bar);
+        position: sticky;
+        display: flex;
+        z-index: 10;
+        top: 0%;
+        justify-content: space-between;
+        top: 0;
+    }
+    #icon_ham:hover,  #icon_close:hover {
+        cursor: pointer;
+        filter: brightness(50%);
+    }
+    #icon_ham:active, #icon_close:active {
+        cursor: pointer;
+        filter: brightness(40%);
+    }
+
+    #icon_ham{
+        margin: 9px;
+        display: inline-block;
+        height: auto;
+        width: 50px;
+        filter: var(--filter_tool_icons);
+    }
+
+    #icon_close {
+        margin: 9px;
+        display: none;
+        height: auto;
+        width: 50px;
+        filter: var(--filter_tool_icons);
     }
 }
 
@@ -412,7 +505,7 @@ li:active {
     display: inline;
     text-align: center;
     width: 20px;
-    position: relative;
+    /* position: relative; */
     bottom: -2px;
     padding-right: 7px;
     height: 20px;
@@ -437,6 +530,7 @@ li:active {
     align-items: center;
     align-content: center;
     text-decoration: none;
+    background-color: #0000;
     transition: text-decoration 3.0s;
 }
 
@@ -448,15 +542,17 @@ li:active {
 
 #tip_box, #color, #stopwatch, #count, #python_proj {
     position: relative;
+    color: var(--color);
 }
 
 
-#tip_box::before, #count::before{
+#tip_box::before{
     background-image: url("tip.png");
+    backdrop-filter: blur(50px);
     background-position: top; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container*/
-    opacity: 0.9;
+    opacity: var(--opacity_projects);
     position: absolute;
     content: "  ";
     width: 670px; 
@@ -466,11 +562,12 @@ li:active {
 }
 
 #python_proj::before {
-    background-image: url("tip.png");
+    background-image: url("py_proj.png");
+    backdrop-filter: blur(50px);
     background-position: top; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container*/
-    opacity: 0.9;
+    opacity: var(--opacity_projects);
     position: absolute;
     content: "  ";
     width: 670px; 
@@ -480,10 +577,11 @@ li:active {
 }
 #count::before{
     background-image: url("adam.png");
+    backdrop-filter: blur(50px);
     background-position: top; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container*/
-    opacity: 0.9;
+    opacity: var(--opacity_projects);
     position: absolute;
     content: "  ";
     width: 670px; 
@@ -494,10 +592,11 @@ li:active {
 
 #stopwatch::before{
     background-image: url("stopwatch.png");
+    backdrop-filter: blur(30px);
     background-position: top; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container*/
-    opacity: 0.9;
+    opacity: var(--opacity_projects);
     position: absolute;
     content: "  ";
     width: 670px; 
@@ -508,10 +607,11 @@ li:active {
 
 #color::before{
     background-image: url("color.png");
+    backdrop-filter: blur(60px);
     background-position: top; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container*/
-    opacity: 0.9;
+    opacity: var(--opacity_projects);
     position: absolute;
     content: "  ";
     width: 670px; 
@@ -535,15 +635,19 @@ li:active {
     align-items: center;
     color: var(--color);
     height: 200px;
+    width: auto;
+    text-align: center;
     margin: none;
     justify-content: center;
+    justify-items: center;
+    align-content: center;
     justify-content: space-evenly;
 }
 
 .footer_text{
     text-align: center;
     text-decoration: none;
-    padding: 70px;
+    padding: 20px;
     font-size: 20px;
     font-family: "DM Sans";
     color: var(--color);
