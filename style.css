@@ -5,7 +5,7 @@
     --active_click: rgb(207, 180, 143);
     --background-color-job: rgb(80, 73, 113);
     --background-topbtn:  rgb(99, 99, 99);
-    --background-color-footer: rgb(44, 20, 68);
+    --background-color-footer: rgb(38, 33, 48);
     --background-image: linear-gradient(rgb(38, 38, 61),rgb(56, 47, 77));
     --background_tool_bar: rgb(38, 38, 61);
     --opacity_projects: 0.7;
@@ -313,9 +313,6 @@ li:active {
     .home p {
         font-size: 3vw;
   }
-    .footer_text {
-        font-size: 13px;
-    }
 }
 #menu_icon  {
     display: none;
@@ -326,15 +323,15 @@ li:active {
 }
 /* Menu Toggle */
 @media (max-width: 630px) {
-    .job{
+    /* .job{
         display: flex;
-        /* border: solid black; */
+        border: solid black;
         border-radius: 25px;
         align-items: flex-start;
         align-content: flex-start;
         padding: 8px;
-        font-size: 17px;  
-    }
+        font-size: 17px;   
+    } */
     .tool-bar {
         position: fixed;
         z-index: 10;
@@ -414,19 +411,14 @@ li:active {
         filter: var(--filter_tool_icons);
     }
 
-    #experience {
+    /* #experience {
         display: flex;
         flex-flow: row wrap;
         max-width: 100%;
         max-height: 100%;
         justify-items: center;
         padding: 16px;
-    }
-
-    #experience_box {
-        display: flex;
-        flex-flow: row wrap;
-    }
+    } */
 
     .job {
         display: flex;
@@ -452,9 +444,10 @@ li:active {
 
 
 #experience_box {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    flex-flow: row wrap;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    display: flex;
+    flex-flow: column wrap;
     column-gap: 25px;
     max-width: 100%;
     max-height: 100%;
@@ -469,7 +462,7 @@ li:active {
     border-radius: 25px;
     align-items: flex-start;
     align-content: flex-start;
-    padding: 8px;
+    padding: 18px;
     font-size: 2vw;
 }
 
@@ -507,6 +500,19 @@ li:active {
 }
 .desc {
     font-size: 12px;
+}
+
+
+@media only screen and (min-width: 630px) {
+    #experience_box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-flow: row wrap;
+    max-width: 100%;
+    max-height: 100%;
+    justify-items: center;
+    padding: 16px;
+    }
 }
 
 /* Skill Section */
@@ -665,13 +671,17 @@ li:active {
 }
 
 /*Footer Section */
-
 #footer {
+    background-color: var(--background-color-footer);
+    width: auto;
+}
+
+#footerLinks {
     display: flex;
     background-color: var(--background-color-footer);
     align-items: center;
     color: var(--color);
-    height: 200px;
+    min-height: 120px;
     width: auto;
     text-align: center;
     margin: none;
@@ -682,17 +692,39 @@ li:active {
 }
 
 .footer_text{
-    text-align: center;
-    text-decoration: none;
-    padding: 20px;
-    font-size: 20px;
-    font-family: "DM Sans";
-    color: var(--color);
-    text-decoration: none;
-    font-weight: 2px;
+        text-align: center;
+        text-decoration: none;
+        padding: 20px;
+        font-family: "DM Sans";
+        color: var(--color);
+        text-decoration: none;
+        font-size: 15px;
+}
+
+@media only screen and (min-width: 650px) {
+    .footer_text{
+        text-align: center;
+        text-decoration: none;
+        padding: 20px;
+        font-size: 20px;
+        font-family: "DM Sans";
+        color: var(--color);
+        text-decoration: none;
+        /* font-weight: 2px; */
+    }
 }
 
 .footer_text:hover{
     cursor: pointer;
     text-decoration: underline;
 }
+
+#id2 {
+    justify-items: center;
+    align-items: center;
+    padding-bottom: 20px;
+    max-height: 100%;
+    color: rgb(187, 176, 161);
+}
+
+
