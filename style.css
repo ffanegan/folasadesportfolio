@@ -9,6 +9,7 @@
     --background-image: linear-gradient(rgb(38, 38, 61),rgb(56, 47, 77));
     --background_tool_bar: rgb(38, 38, 61);
     --opacity_projects: 0.7;
+    --footerid2: rgb(187, 176, 161);
     --opacity_darkmode: 1;
     --filter_tool_icons: brightness(100%);
 }
@@ -17,12 +18,13 @@
     --color: rgb(54, 8, 44);
     --active_click: rgb(99, 37, 85);
     --background-color-job: rgb(235, 201, 238);
-    --background-topbtn:  rgb(151, 151, 151);
+    --background-topbtn:  rgb(187, 187, 187);
     --background-color-footer: rgb(219, 179, 223);
     --background-image: linear-gradient(rgb(253, 253, 253),rgb(252, 219, 255));
     --background_tool_bar: rgb(253, 253, 253);
     --display_light: flex;
     --color_pro: antiquewhite;
+    --footerid2: rgb(40, 19, 35);
     --opacity_lightmode: 0;
     --filter_tool_icons: brightness(60%);
 }
@@ -564,6 +566,7 @@ li:active {
     display: flex;
     font-size: 20px;
     height: 140px;
+
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -724,7 +727,7 @@ li:active {
     align-items: center;
     padding-bottom: 20px;
     max-height: 100%;
-    color: rgb(187, 176, 161);
+    color: var(--footerid2);
 }
 
 
